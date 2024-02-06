@@ -76,7 +76,7 @@ a:hover {
 
 @media (width <= 760px) {
   .intro {
-    line-height: 2rem;
+    line-height: 2.25rem;
   }
 }
 
