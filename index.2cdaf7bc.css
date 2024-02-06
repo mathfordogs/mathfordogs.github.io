@@ -74,6 +74,12 @@ a:hover {
   font-weight: normal;
 }
 
+@media (width <= 760px) {
+  .intro {
+    line-height: 2rem;
+  }
+}
+
 .intro p {
   line-height: 1.75rem;
 }
