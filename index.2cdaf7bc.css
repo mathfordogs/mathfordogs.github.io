@@ -50,6 +50,7 @@ a:hover {
 
 .intro {
   margin-bottom: 96px;
+  padding: 0 20px;
 }
 
 .intro img {
@@ -82,6 +83,10 @@ a:hover {
 
 .intro p {
   line-height: 1.75rem;
+}
+
+.work {
+  padding: 0 20px;
 }
 
 .work div {
