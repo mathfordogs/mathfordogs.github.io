@@ -1,0 +1,40 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Mike Henderson" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	@font-face {
+		font-family: "Satoshi Regular";
+		src: url("assets/fonts/satoshi-regular.woff");
+	}
+
+	@font-face {
+		font-family: "Satoshi Bold";
+		src: url("assets/fonts/satoshi-bold.woff");
+	}
+
+	html {
+		font-family: "Satoshi Regular", sans-serif;
+		background: #fff;
+		color: #000;
+		-webkit-font-smoothing: antialiased;
+  		-moz-osx-font-smoothing: grayscale;
+	}
+</style>
