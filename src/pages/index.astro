@@ -1,46 +1,92 @@
 ---
+import { Image } from 'astro:assets';
+import { getCollection } from "astro:content";
 import Layout from '../layouts/Layout.astro';
+import Thumb from '../components/Thumb.astro';
+
+const allProjects = await getCollection("projects");
+
+
 ---
 
 <Layout title="Mike Henderson - Math for Dogs">
-	<main>
-		<h1 class="text-4xl leading-10 mb-2 text-black">Mike Henderson</h1>
-		<p class="text-lg text-black">Senior Designer & Strategist</p>
+	<main class="flex flex-col space-y-16 md:space-y-16">
+		<!--hero-->
+		<section class="Hero">
+			<div class="container px-4">
+				<h1 class="font-black uppercase pt-10 md:pt-30 pb-4">Mike 
+					<br />Henderson</h1>
+				<h2 class="text-4xl">Design. Research. Strategy.</h2>
+			</div>
+		</section>
 		
-		<div class="pt-12 pb-8">
-			<h3 class="text-sm text-gray-500 mb-2">Currently</h3>
-			<p class="text-lg text-black">Senior UX Designer / UX Lead, Choice Architecture at <a href="https://adhocteam.us" target="_blank" class="underline text-blue-500">Ad Hoc</a></p>
-		</div>
+		<!--work-->
+		<section class="Current">
+			<div class="container px-4 prose flex">
+				<div class="w-full md:w-1/2">
+				<h5 class="mb-4 opacity-60">Currently</h5>
+				<p class="text-xl font-medium mt-0">Senior Designer @ <a href="https://adhocteam.us" target="_blank" class="text-lightBlue">Ad Hoc</a>
+				<small class="block text-md font-normal mt-2">UX lead, Choice Architecture. Working to empower enrollees to more easily find health coverage that aligns with their unique health and financial needs.</small></p>
+			</div>
+		</section>
+		<section class="Previous">
+			<div class="container px-4 prose flex">
+				<div class="w-full md:w-1/2">
+				<h5 class="mb-4 opacity-60">Previously</h5>
+				<ul class="list-none m-0 p-0">
+					<li class="p-0">Research &amp; Strategy @ <a href="https://anatta.io" target="_blank">Anatta</a></li>
+					<li class="p-0">Design &amp; Dev @ <a href="https://wojodesign.com" target="_blank">Wojo Design</a></li>
+					<li class="p-0">Design &amp; Dev @ <a href="https://ehousestudio.com" target="_blank">eHouse Studio</a></li>
+				</ul>
+				</div>
+			</div>
+		</section>
+		
+		<section class="Previous">
+			<div class="container px-4 prose flex">
+				<div class="w-full md:w-1/2">
+				<h5 class="mb-4 opacity-60">Live Work</h5>
+				<ul class="list-none m-0 p-0">
+					<li class="p-0"><a href="https://healthcare.gov/see-plans" target="_blank">HealthCare.gov</a> (UX strategy, design)</li>
+					<li class="p-0"><a href="https://roka.com" target="_blank">ROKA</a> (Optimization, strategy, design)</li>
+					<li class="p-0"><a href="https://roka.com" target="_blank">Housing Authority of Cook County</a> (UX strategy, design, development)</li>
+					<li class="p-0"><a href="https://fibroidfighters.org.com" target="_blank">Fibroid Fighters</a> (Design, development)</li>
+					<li class="p-0 mt-8 italic">Case studies available upon request</li>
+				</ul>
+				</div>
+			</div>
 
-		<div class="py-8">
-			<h3 class="text-sm text-gray-500 mb-2">Past clients</h3>
-			<p class="text-lg"><a href="https://blueland.com" target="_blank" class="underline text-blue-500">Blueland</a> | <a href="https://roka.com" target="_blank" class="underline text-blue-500">ROKA</a> | <a href="https://foriawellness.com" target="_blank" class="underline text-blue-500">FORIA</a> | <a href="https://thehacc.org" target="_blank" class="underline text-blue-500">Housing Authority of Cook County</a></p>
-		</div>
-
-		<div class="py-8">
-			<h3 class="text-sm text-gray-500 mb-2">Lets connect</h3>
-			<p class="text-lg"><a href="mailto:mike@mathfordogs.com" class="underline text-blue-500">mike@mathfordogs.com</a> | <a href="https://www.linkedin.com/in/mike-henderson-ux/" target="_blank" class="underline text-blue-500">LinkedIn</a></p>
-		</div>
-
-		<div class="py-8">
-			<p class="text-sm text-gray-500">&copy; 2024 Mike Henderson. All rights reserved.</p>
-		</div>
+		</section>
+		
+		<section class="Contact">
+			<div class="container px-4 prose flex">
+				<div class="w-full md:w-1/2">
+				<h5 class="mb-4 opacity-60">Contact</h5>
+				<ul class="list-none m-0 p-0">
+					<li class="p-0"><a href="mailto:mike@mathfordogs.com">Email</li>
+					<li class="p-0"><a href="https://linkedin.com/in/mike-henderson-ux" target="_blank">LinkedIn</a></li>
+				</ul>
+				</div>
+			</div>
+		</section>
+		
+		<footer>
+			<div class="container px-4 pb-8 text-sm">
+			&copy; 2024 Mike Henderson. All rights reserved.
+			</div>
+		</footer>
 	</main>
 </Layout>
 
 <style>
-	main {
-		margin: auto;
-		padding: 4rem 1rem 2rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
-	}
 
-	h1 {
-		font-family: "Satoshi Bold", sans-serif;
-	}
+.Hero h1 {
+	font-size: clamp(3.125rem, 10.393vw + 0.436rem, 8.75rem);
+	line-height: 100%;
+	margin-left: -6px;
+}
 
+.Work h2 {
+	letter-spacing: 2px;
+}
 </style>

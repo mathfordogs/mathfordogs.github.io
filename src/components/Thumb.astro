@@ -1,0 +1,54 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+entry: CollectionEntry<"projects">;
+   imagePath: string;
+   altText: string;
+}
+
+const { imagePath, altText, entry } = Astro.props;
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*.{jpeg,jpg,png,gif}');
+if (!images[imagePath]) throw new Error(`"${imagePath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`);
+
+---
+
+<li>
+    <a href={`/${entry.collection}/${entry.slug}`}>
+        <div class="WorkThumb">
+            <Image src={images[imagePath]()} alt={altText} />
+        </div>
+        
+        <div class="WorkDetails">
+            <h4 class="text-lg text-darkBlue font-semibold mb-1">{entry.data.title}</h4>
+            <p class="underline text-md">View case study</p>
+        </div>
+    </a>
+</li>
+
+<style>
+    .WorkThumb {
+        display: block;
+        position: relative;
+        border-radius: 0.5rem;
+        background: #E2EEF1;
+        border: 1px solid #E2EEF1;
+        margin-bottom: 1.5rem;
+        overflow: hidden;
+    }
+    
+    .WorkThumb:after {
+        content: '';
+        display: block;
+        padding-bottom: 100%;
+    }
+    
+    .WorkThumb img {
+        position: absolute;
+        top: 32px;
+        left: 32px;
+    }
+
+</style>

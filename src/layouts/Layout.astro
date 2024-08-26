@@ -1,4 +1,6 @@
 ---
+import "../styles/global.css";
+
 interface Props {
 	title: string;
 }
@@ -19,22 +21,3 @@ const { title } = Astro.props;
 		<slot />
 	</body>
 </html>
-<style is:global>
-	@font-face {
-		font-family: "Satoshi Regular";
-		src: url("/fonts/satoshi-regular.woff");
-	}
-
-	@font-face {
-		font-family: "Satoshi Bold";
-		src: url("/fonts/satoshi-bold.woff");
-	}
-
-	html {
-		font-family: "Satoshi Regular", sans-serif;
-		background: #fff;
-		color: #000;
-		-webkit-font-smoothing: antialiased;
-  		-moz-osx-font-smoothing: grayscale;
-	}
-</style>

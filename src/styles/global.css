@@ -1,0 +1,72 @@
+@font-face {
+  font-family: 'MonaSans';
+  src: url('/fonts/MonaSans-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MonaSans';
+  src: url('/fonts/MonaSans-Italic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'MonaSans';
+  src: url('/fonts/MonaSans-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MonaSans';
+  src: url('/fonts/MonaSans-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MonaSans';
+  src: url('/fonts/MonaSans-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MonaSans';
+  src: url('/fonts/MonaSans-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+}
+
+html {
+    -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    @apply text-darkBlue;
+    font-family: 'MonaSans', sans-serif;
+    line-height: 1.75;
+    background: #fff;
+    
+    overflow-x: hidden;
+}
+
+a {
+    @apply text-lightBlue;
+}
+
+.full-width {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.container {
+  max-width: 1200px;
+}

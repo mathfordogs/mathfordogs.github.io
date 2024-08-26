@@ -1,0 +1,58 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from "astro:content";
+import Layout from '../layouts/Layout.astro';
+import Thumb from '../components/Thumb.astro';
+import Footer from '../components/Footer.astro';
+
+const allProjects = await getCollection("projects");
+
+
+---
+
+<Layout title="Mike Henderson - Math for Dogs">
+	<main class="flex flex-col space-y-16 md:space-y-24">
+		<!--hero-->
+		<section class="Hero">
+			<div class="container px-4">
+				<h1 class="font-black uppercase pt-20 md:pt-30 pb-4">Mike 
+					<br />Henderson</h1>
+				<h2 class="text-4xl">Design. Research. Strategy.</h2>
+			</div>
+		</section>
+		
+		<!--work-->
+		<section class="Work">
+			<div class="container px-4">
+				<!-- <header>
+					<h2 class="border-b border-lightGray uppercase pb-2 mb-10 md:mb-16">Work</h2>
+				</header> -->
+				
+				<ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+					{allProjects.map(projectEntry => (
+						<Thumb 
+							entry={projectEntry} 
+							imagePath={projectEntry.data.cover}
+							altText="Test"	
+						/>
+					))}
+				</ul>
+			</div>
+		</section>
+		
+		<Footer />
+	</main>
+</Layout>
+
+<style>
+
+.Hero h1 {
+	font-size: clamp(3.125rem, 10.393vw + 0.436rem, 8.75rem);
+	line-height: 100%;
+	margin-left: -6px;
+}
+
+.Work h2 {
+	letter-spacing: 2px;
+}
+</style>

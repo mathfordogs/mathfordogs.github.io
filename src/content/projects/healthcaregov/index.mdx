@@ -1,0 +1,149 @@
+---
+title: "HealthCare.gov Plan Cards"
+description: "Empowering citizens in search of health coverage"
+cover: "/src/assets/thumb-card@2x.png"
+coverAlt: "HealthCare.gov"
+---
+
+import { Image } from 'astro:assets';
+
+<section class="Hero pt-10 md:pt-20">
+    <div class="container px-4">
+        <header class="pb-4 mb-10">
+            <h1 class="text-4xl font-black mb-2">HealthCare.gov</h1>
+            <h2 class="text-lg">Plan card redesign</h2>
+        </header>
+    </div>
+    
+    <img src="/src/assets/hero-card@2x.png" />
+    
+</section>
+
+<section class="Challenge">
+    <div class="container px-4">
+        <div class="flex flex-col flex-col-reverse md:flex-row justify-between mb-20 md:mb-40">
+            <div class="prose w-full md:w-8/12">
+                <h1 class="font-bold">The Challenge</h1>
+                <p>Plan cards are the primary tool consumers use to assess and compare available plans on HealthCare.gov. Health insurance literacy is universally low and there are often 100+ plans with dozens of benefit/cost attributes to consider.</p>
+                    
+                <p>Users were often reaching a point of frustration and exhaustion while plan shopping, giving up, and “settling” for a plan. The potential for negative health and financial outcomes due to suboptimal plan selection is significant. So...</p>
+                
+                <blockquote class="bg-lightBlue text-white border-none rounded-md p-6 my-16 font-normal not-italic"><strong>How might we</strong> clarify the essential differences between plans, making them easier to compare, and remove friction from the path between the consumer and a plan that meets their unique needs?</blockquote>
+                
+                <h2>First Steps</h2>
+                <p>First we needed to understand  how real consumers were using plan cards, both in isolation and as part of their entire plan shopping journey. Based on our own heuristics audit and knowledge of UX best practices, we had a series of assumptions about the issues affecting the plan cards.</p>
+            </div>
+            
+            <div class="w-full md:w-3/12 mb-12">
+                <h4 class="uppercase font-medium tracking-widest mb-4">My Role</h4>
+                <ul class="text-[#2B748C]">
+                    <li class="mb-2">discovery</li>
+                    <li class="mb-2">UX strategy</li>
+                    <li class="mb-2">workshop facilitation</li>
+                    <li class="mb-2">interacting prototyping</li>
+                    <li class="mb-2">user testing</li>
+                    <li class="mb-2">UI design</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="my-10 md:my-32">
+            <img src="/src/assets/original-audit@2x.png" />
+        </div>
+        
+        <div class="prose w-full md:w-8/12">
+            <h2>Research, Analytics, and Call Centers OH MY!</h2>
+            <p>Uncovering research and data-validated consumer frustrations and pain points was essential to ensure we addressed the right problems and didn’t succumb to our own blindspots and biases. Fortunately, we had a wealth of past research and data to analyze, synthesize, and translate into specific requirements and problems to be solved. This included:</p>
+            
+            <ul>
+                <li>Years worth of user research conducted by CMS’ Division of Research</li>
+                <li>Analytics data from multiple sources, tracking interaction with all aspects of the plan cards</li>
+                <li>Aggregated feedback, questions, and complaints for consumers calling CMS call centers</li>
+                <li>Site-wide and page-specific surveys driving a user pain index and log of comments and complaints</li>
+            </ul>
+            
+            <h2>Stakeholder Engagement</h2>
+            <p>While CMS’ Office of Communications is our primary stakeholder, representatives from several other arms of the agency were heavily involved throughout this process, providing subject matter expertise and guidance along the way. We led a group of over 40 stakeholders through a series of collaborative UX workshops to ensure our solutions aligned with the many business needs of CMS.</p>
+        </div>
+        
+        <div class="Stakeholders mt-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-fr">
+                <div class="border border-lightBlue rounded-lg p-7">
+                    <h5 class="font-semibold text-sm uppercase mb-1">Division of Research (DR)</h5>
+                    <p class="text-sm">Generative and evaluative user research, end-to-end user testing, industry-specific research</p>
+                </div>
+                <div class="border border-lightBlue rounded-lg p-7">
+                    <h5 class="font-semibold text-sm uppercase mb-1">Call Center Operations Group (CCOG)</h5>
+                    <p class="text-sm">Fielding calls from enrollees with questions or comments, reporting real-world user issues</p>
+                </div>
+                <div class="border border-lightBlue rounded-lg p-7">
+                    <h5 class="font-semibold text-sm uppercase mb-1">Center for Consumer Information and Insurance Oversight (CCIIO)</h5>
+                    <p class="text-sm">Policy experts tasked with ensuring compliance with the Affordable Care Act reforms</p>
+                </div>
+                <div class="border border-lightBlue rounded-lg p-7">
+                    <h5 class="font-semibold text-sm uppercase mb-1">Division of Web Experience (DWE)</h5>
+                    <p class="text-sm">Driving the improvement of user experience across CMS products</p>
+                </div>
+                <div class="border border-lightBlue rounded-lg p-7">
+                    <h5 class="font-semibold text-sm uppercase mb-1">Creative services Group (CSG)</h5>
+                    <p class="text-sm">Content writing and translations</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="Workshops prose mt-16">
+            <h2>Problems Identified, Desired Outcomes Defined</h2>
+            <p>The synthesis of our many discovery inputs led to identification and alignment around a core set of problems to be solved and our desired outcomes for consumers:</p>
+            
+            <ol class="text-customRed text-lg font-semibold">
+                <li class="mb-8">A clear visual hierarchy that promotes more efficient scanning and comparison of the most important plan attributes</li>
+                <li>An intentional, usable mobile experience</li>
+            </ol>
+        </div>
+    </div>
+</section>
+
+<section class="Solutions">
+    <div class="container px-4 flex">
+        <div class="w-full md:w-8/12 prose">
+            <h1 class="font-bold">Solutions</h1>
+            
+            <h2>Primary and Secondary Decision Making</h2>
+            <p>Plans are made up of over 100 individual benefit/cost attributes, but there are generally just a few pieces of cost information that serve as primary decision points for consumers. Monthly premium, deductible, out of pocket max, and estimate total yearly cost are the clearest indicators of how much a plan will actually cost. If those costs for a given plan don’t resonate with the consumer, the many other costs and benefits of the plan are unlikely to attract their attention or consideration.</p>
+            
+            <blockquote class="bg-lightBlue text-white border-none rounded-md p-6 my-16 not-italic"><strong>The plan:</strong> Establish a visual hierarchy that clarifies the primary attributes, making it easier to quickly scan the page and identify which plans have potential, then provide a means of exploring the next level of cost information.</blockquote>
+        </div>
+    </div>
+    
+    <div class="bg-[#E2EEF1] py-16">
+        <div class="container px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="w-full md:w-7/12">
+                    <div class="mb-20">
+                        <h3 class="font-bold text-lg mb-4">New card design - default state</h3>
+                        <img src="/src/assets/CardClosed@2x.png" />
+                    </div>
+                    
+                    <div>
+                        <h3 class="font-bold text-lg mb-4">New card design - expanded</h3>
+                        <img src="/src/assets/CardOpened@2x.png" />
+                    </div>
+                </div>
+                
+                <div class="w-full md:w-4/12 prose">
+                    <h4 class="uppercase font-normal tracking-widest mb-4 mt-10">Improvements</h4>
+                    <ul class="text-[#2B748C]">
+                        <li class="mb-2">Refactored spacing, type, and visual hierarchy</li>
+                        <li class="mb-2">Icon tooltip replaced with less intrusive underline pattern</li>
+                        <li class="mb-2">Secondary costs hidden via accordion pattern</li>
+                        <li class="mb-2">Redundant content removed</li>
+                        <li class="mb-2">New “You pay” plain language label</li>
+                        <li class="mb-2">Inclusion of benefits available before deductible</li>
+                    </ul>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</section>
